@@ -11,3 +11,17 @@ function updateScrollPosition() {
 }
 
 requestAnimationFrame(updateScrollPosition);
+
+function scrollToNextSoda() {
+    sodaNameLayer.scrollBy({'top' : 0, 'left' : sodaNameLayer.scrollWidth/4, 'behavior' : 'smooth'})
+}
+
+function scrollToPreviousSoda() {
+    sodaNameLayer.scrollBy({'top' : 0, 'left' : -sodaNameLayer.scrollWidth/4, 'behavior' : 'smooth'})
+}
+
+function onDocumentScroll(scrollEvent) {
+    console.log(scrollEvent);
+}
+
+document.addEventListener('scroll', onDocumentScroll);
