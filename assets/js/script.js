@@ -1,5 +1,7 @@
 let sodaNameLayer = document.querySelector('#soda-name-layer');
 let fruitPiecesLayer = document.querySelector('#fruit-pieces-layer');
+let previousSodaButtonContainer = document.getElementById('previous-soda-button-container');
+let nextSodaButtonContainer = document.getElementById('next-soda-button-container');
 
 function updateScrollPosition() {
     let sodaNameLayerHScrollRatio = sodaNameLayer.scrollLeft / sodaNameLayer.scrollWidth;
@@ -20,8 +22,10 @@ function scrollToPreviousSoda() {
     sodaNameLayer.scrollBy({'top' : 0, 'left' : -sodaNameLayer.scrollWidth/4, 'behavior' : 'smooth'})
 }
 
-function onDocumentScroll(scrollEvent) {
-    console.log(scrollEvent);
-}
+previousSodaButtonContainer.addEventListener('click', (e) => {
+    scrollToPreviousSoda();
+});
 
-document.addEventListener('scroll', onDocumentScroll);
+nextSodaButtonContainer.addEventListener('click', (e) => {
+    scrollToNextSoda();
+});

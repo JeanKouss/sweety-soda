@@ -78,8 +78,53 @@ h2 {
 .switch-soda-button-container {
     height: 100%;
     width: 15%;
-    background-color: red;
+    cursor: pointer;
+    /* background-color: red; */
 }
+
+.switch-soda-button-container button {
+    background-color: transparent;
+    border: none;
+    width: 8vw;
+    height: 8vw;
+    border: 2px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: perspective(1000rem);
+    transition: all 0.2s;
+    box-shadow: 0 0 1rem 0 black;
+}
+
+.switch-soda-button-container button svg{
+    width: 5vw;
+    height: 5vw;
+    fill: #FFF;
+    stroke: black;
+    stroke-width: 10px;
+    transition: all 0.2s;
+}
+
+#previous-soda-button-container:hover button {
+    transform: perspective(1000rem) rotateY(-30deg);
+}
+
+#next-soda-button-container:hover button {
+    transform: perspective(1000rem) rotateY(30deg);
+}
+
+#previous-soda-button-container:hover button svg {
+    transform: translateX(-1rem);
+}
+#next-soda-button-container:hover button svg {
+    transform: translateX(1rem);
+}
+#previous-soda-button-container:active button svg {
+    transform: translateX(-1.5rem);
+}
+#next-soda-button-container:active button svg {
+    transform: translateX(1.5rem);
+}
+
 
 /* Decorations positioning */
 .fruits-decoration.apple img:nth-child(1) {
