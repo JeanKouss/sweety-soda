@@ -87,7 +87,7 @@ h2 {
     border: none;
     width: 8vw;
     height: 8vw;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     border-radius: 50%;
     overflow: hidden;
     transform: perspective(1000rem);
@@ -123,6 +123,52 @@ h2 {
 }
 #next-soda-button-container:active button svg {
     transform: translateX(1.5rem);
+}
+
+/* SODA BOTTLE LAYER */
+#soda-bottle-layer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#bottles-container {
+    width: 90%;
+    max-width: 400px;
+    height: 90%;
+    max-height: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-mask-image: url('../imgs/bottle.png');
+    mask-image: url('../imgs/bottle.png');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+#bottle-cover {
+    height: 100%;
+    width: 400%;
+    background-image: url('../imgs/bottle-cover-row.png');
+    background-repeat: repeat-x;
+    background-position-y: center;
+    background-size: contain;
+    transition: all 0.2s;
+}
+#bottle-cover.apple-side {
+    transform: translateX(0%);
+}
+#bottle-cover.lemon-side {
+    transform: translateX(-25%);
+}
+#bottle-cover.soda-side {
+    transform: translateX(-50%);
+}
+#bottle-cover.soda-side {
+    transform: translateX(-75%);
 }
 
 
