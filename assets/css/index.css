@@ -100,7 +100,7 @@ h2 {
 
 .switch-soda-button-container {
     height: 100%;
-    width: 15%;
+    width: max(20%, 10rem);
     cursor: pointer;
     /* background-color: red; */
 }
@@ -108,8 +108,8 @@ h2 {
 .switch-soda-button-container button {
     background-color: transparent;
     border: none;
-    width: 8vw;
-    height: 8vw;
+    width: max(8vw, 5rem);
+    height: max(8vw, 5rem);
     /* border: 2px solid white; */
     border-radius: 50%;
     overflow: hidden;
@@ -119,8 +119,8 @@ h2 {
 }
 
 .switch-soda-button-container button svg{
-    width: 5vw;
-    height: 5vw;
+    width: 62.5%;
+    height: 62.5%;
     fill: #FFF;
     stroke: black;
     stroke-width: 10px;
@@ -171,6 +171,7 @@ h2 {
     mask-position: center;
     -webkit-mask-size: contain;
     mask-size: contain;
+    isolation: isolate;
 }
 
 #bottle-cover {
@@ -178,9 +179,10 @@ h2 {
     height: 100%;
     width: 400%;
     background-image: url('../imgs/bottle-cover-row.png');
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     background-position-y: center;
     background-size: contain;
+    mix-blend-mode: multiply;
 }
 #soda-bottle-layer.apple-side #bottle-cover {
     transform: translateX(0%);
@@ -195,8 +197,19 @@ h2 {
     transform: translateX(-75%);
 }
 
+#soda-bottle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('../imgs/bottle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    mix-blend-mode: multiply;
+}
+
 #soda-name-layer, #fruit-pieces-layer, #bottle-cover {
-    transition: all 0.2s;
+    transition: all 0.5s;
 }
 
 
