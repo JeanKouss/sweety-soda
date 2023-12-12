@@ -10,13 +10,23 @@
 #soda-name-layer {
     display: flex;
     flex-direction: row;
-    /* scroll-snap-type: x mandatory; */
-    overflow-x: scroll;
     overflow-y: hidden;
-    max-width: 100vw;
+    width: fit-content;
     max-height: 100vh;
-    overflow: hidden;
 }
+#soda-name-layer.apple-side {
+    transform: translateX(0%);
+}
+#soda-name-layer.lemon-side {
+    transform: translateX(-25%);
+}
+#soda-name-layer.grappe-side {
+    transform: translateX(-50%);
+}
+#soda-name-layer.cherry-side {
+    transform: translateX(-75%);
+}
+
 
 .layer {
     position: absolute;
@@ -60,8 +70,21 @@ h2 {
 #fruit-pieces-layer {
     position: absolute;
     pointer-events: none;
-    overflow: hidden;
+    overflow: visible;
 }
+#fruit-pieces-layer.apple-side {
+    transform: translateY(0%);
+}
+#fruit-pieces-layer.lemon-side {
+    transform: translateY(-100%);
+}
+#fruit-pieces-layer.grappe-side {
+    transform: translateY(-200%);
+}
+#fruit-pieces-layer.cherry-side {
+    transform: translateY(-300%);
+}
+
 
 .fruits-decoration {
     position: relative;
@@ -133,6 +156,7 @@ h2 {
 }
 
 #bottles-container {
+    position: relative;
     width: 90%;
     max-width: 400px;
     height: 90%;
@@ -150,25 +174,29 @@ h2 {
 }
 
 #bottle-cover {
+    position: absolute;
     height: 100%;
     width: 400%;
     background-image: url('../imgs/bottle-cover-row.png');
     background-repeat: repeat-x;
     background-position-y: center;
     background-size: contain;
-    transition: all 0.2s;
 }
-#bottle-cover.apple-side {
+#soda-bottle-layer.apple-side #bottle-cover {
     transform: translateX(0%);
 }
-#bottle-cover.lemon-side {
+#soda-bottle-layer.lemon-side #bottle-cover {
     transform: translateX(-25%);
 }
-#bottle-cover.soda-side {
+#soda-bottle-layer.grappe-side #bottle-cover {
     transform: translateX(-50%);
 }
-#bottle-cover.soda-side {
+#soda-bottle-layer.cherry-side #bottle-cover {
     transform: translateX(-75%);
+}
+
+#soda-name-layer, #fruit-pieces-layer, #bottle-cover {
+    transition: all 0.2s;
 }
 
 
