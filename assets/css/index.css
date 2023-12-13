@@ -7,27 +7,6 @@
     overflow: hidden;
 }
 
-#soda-name-layer {
-    display: flex;
-    flex-direction: row;
-    overflow-y: hidden;
-    width: fit-content;
-    max-height: 100vh;
-}
-#soda-name-layer.apple-side {
-    transform: translateX(0%);
-}
-#soda-name-layer.lemon-side {
-    transform: translateX(-25%);
-}
-#soda-name-layer.grappe-side {
-    transform: translateX(-50%);
-}
-#soda-name-layer.cherry-side {
-    transform: translateX(-75%);
-}
-
-
 .layer {
     position: absolute;
     /* min-width: 100vw;
@@ -36,62 +15,7 @@
     height: 100%;
 }
 
-.soda-bg {
-    position: relative;
-    /* scroll-snap-align: start; */
-    flex-shrink: 0;
-    width: 100vw;
-    height: 100vh;
-}
-.soda-bg.apple {
-    background-color: var(--apple-bg);
-}
-.soda-bg.lemon {
-    background-color: var(--lemon-bg);
-}
-.soda-bg.grappe {
-    background-color: var(--grappe-bg);
-}
-.soda-bg.cherry {
-    background-color: var(--cherry-bg);
-}
-
-h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 25vw;
-    font-weight: 700;
-    color: #FFF;
-}
-
-#fruit-pieces-layer {
-    position: absolute;
-    pointer-events: none;
-    overflow: visible;
-}
-#fruit-pieces-layer.apple-side {
-    transform: translateY(0%);
-}
-#fruit-pieces-layer.lemon-side {
-    transform: translateY(-100%);
-}
-#fruit-pieces-layer.grappe-side {
-    transform: translateY(-200%);
-}
-#fruit-pieces-layer.cherry-side {
-    transform: translateY(-300%);
-}
-
-
-.fruits-decoration {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
+/* UI LAYER */
 #ui-layer {
     display: flex;
     flex-direction: row;
@@ -100,7 +24,7 @@ h2 {
 
 .switch-soda-button-container {
     height: 100%;
-    width: max(20%, 10rem);
+    width: max(20%, 6rem);
     cursor: pointer;
     /* background-color: red; */
 }
@@ -147,6 +71,7 @@ h2 {
 #next-soda-button-container:active button svg {
     transform: translateX(1.5rem);
 }
+
 
 /* SODA BOTTLE LAYER */
 #soda-bottle-layer {
@@ -213,77 +138,173 @@ h2 {
 }
 
 
+/* SODA NAME LAYER */
+#soda-name-layer {
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    width: fit-content;
+    max-height: 100vh;
+}
+#soda-name-layer.apple-side {
+    transform: translateX(0%);
+}
+#soda-name-layer.lemon-side {
+    transform: translateX(-25%);
+}
+#soda-name-layer.grappe-side {
+    transform: translateX(-50%);
+}
+#soda-name-layer.cherry-side {
+    transform: translateX(-75%);
+}
+
+.soda-bg {
+    position: relative;
+    /* scroll-snap-align: start; */
+    flex-shrink: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.soda-bg.apple {
+    background-color: var(--apple-bg);
+}
+.soda-bg.lemon {
+    background-color: var(--lemon-bg);
+}
+.soda-bg.grappe {
+    background-color: var(--grappe-bg);
+}
+.soda-bg.cherry {
+    background-color: var(--cherry-bg);
+}
+
+h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25vw;
+    font-weight: 700;
+    color: #FFF;
+}
+
+
+/* FRUIT PIECES LAYER */
+#fruit-pieces-layer {
+    position: absolute;
+    pointer-events: none;
+    overflow: visible;
+}
+#fruit-pieces-layer.apple-side {
+    transform: translateY(0%);
+}
+#fruit-pieces-layer.lemon-side {
+    transform: translateY(-100%);
+}
+#fruit-pieces-layer.grappe-side {
+    transform: translateY(-200%);
+}
+#fruit-pieces-layer.cherry-side {
+    transform: translateY(-300%);
+}
+
+.fruits-decoration {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 /* Decorations positioning */
 .fruits-decoration.apple img:nth-child(1) {
     position: absolute;
     top: 0;
     left: 0;
-    width: 40vh;
-    height: 40vh;
+    width: min(40vh, 40vw);
+    height: min(40vh, 40vw);
+    min-width: 15rem;
+    min-height: 15rem;
     transform: translateX(-54%) rotateZ(-43deg);
 }
 .fruits-decoration.apple img:nth-child(2) {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 35vh;
-    height: 35vh;
+    width: min(35vh, 35vw);
+    height: min(35vh, 35vw);
+    min-width: 15rem;
+    min-height: 15rem;
     transform: rotateZ(100deg);
 }
 .fruits-decoration.apple img:nth-child(3) {
     position: absolute;
     top: 5rem;
     right: -5rem;
-    width: 35vh;
-    height: 35vh;
+    width: min(35vh, 35vw);
+    height: min(35vh, 35vw);
+    min-width: 15rem;
+    min-height: 15rem;
     transform: translateX(-15%) rotateZ(60deg);
 }
 .fruits-decoration.lemon img:nth-child(1) {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 50vh;
-    height: 50vh;
+    width: min(50vh, 50vw);
+    height: min(50vh, 50vw);
+    min-width: 15rem;
+    min-height: 15rem;
     transform: translateX(-0%);
 }
 .fruits-decoration.lemon img:nth-child(2) {
     position: absolute;
     bottom: 8rem;
     right: 5rem;
-    width: 25vh;
-    height: 25vh;
+    width: min(25vh, 25vw);
+    height: min(25vh, 25vw);
+    min-width: 15rem;
+    min-height: 15rem;
     transform: rotateZ(65deg);
 }
 .fruits-decoration.lemon img:nth-child(3) {
     position: absolute;
     top: 0;
     left: -0;
-    width: 35vh;
-    height: 35vh;
+    width: min(35vh, 35vw);
+    height: min(35vh, 35vw);
+    min-width: 15rem;
+    min-height: 15rem;
     transform: rotateZ(180deg);
 }
 .fruits-decoration.grappe img:nth-child(1) {
     position: absolute;
     top: 0;
     left: 10%;
-    width: 20vh;
-    height: 20vh;
+    width: min(20vh, 20vw);
+    height: min(20vh, 20vw);
+    min-width: 15rem;
+    min-height: 15rem;
     transform: translateX(-0%);
 }
 .fruits-decoration.grappe img:nth-child(2) {
     position: absolute;
     bottom: 8rem;
-    right: 5rem;
-    width: 25vh;
-    height: 25vh;
+    right: 5%;
+    width: min(25vh, 25vw);
+    height: min(25vh, 25vw);
+    min-width: 10rem;
+    min-height: 10rem;
     transform: rotateZ(-97deg);
 }
 .fruits-decoration.grappe img:nth-child(3) {
     position: absolute;
-    bottom: -8vh;
-    left: -20vh;
-    width: 50vh;
-    height: 50vh;
+    bottom: max(-8vh, -8vw);
+    left: max(-20vh, -20vw);
+    width: min(50vh, 50vw);
+    height: min(50vh, 50vw);
+    min-width: 15rem;
+    min-height: 15rem;
     transform: scaleX(-1);
 }
 .fruits-decoration.cherry img:nth-child(1) {
