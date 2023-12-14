@@ -142,7 +142,34 @@
 }
 
 #soda-name-layer, #fruit-pieces-layer, #bottle-cover {
-    transition: all 0.5s;
+    transition: all var(--transition-duration) ease-in;
+}
+
+.bottle-aside {
+    position: absolute;
+    top: 45%;
+    top: calc(50% - 50px); /* overhide if support */
+    left: 50%;
+    width: 500px;
+    height: 450px;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity var(--transition-duration) ease-in;
+}
+#bottle-aside-lemon {
+    transform: translateX(-100%);
+}
+#bottle-aside-grappe {
+    transform: translateX(-100%);
+}
+#bottle-aside-cherry {
+    transform: translateX(-15%) scaleX(-1);
+}
+.apple-context #bottle-aside-apple,
+.lemon-context #bottle-aside-lemon,
+.grappe-context #bottle-aside-grappe,
+.cherry-context #bottle-aside-cherry {
+    opacity: 1;
 }
 
 
