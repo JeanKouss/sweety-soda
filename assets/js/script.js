@@ -1,4 +1,5 @@
 // Layers select
+let layersContainer = document.querySelector('#sodas-layers-container');
 let sodaNameLayer = document.querySelector('#soda-name-layer');
 let fruitPiecesLayer = document.querySelector('#fruit-pieces-layer');
 let sodaBottleLayer = document.querySelector('#soda-bottle-layer');
@@ -8,51 +9,39 @@ let previousSodaButtonContainer = document.getElementById('previous-soda-button-
 let nextSodaButtonContainer = document.getElementById('next-soda-button-container');
 
 // Vars
-let sodaSideTree = {
-    'apple-side' : {
-        'previous' : 'apple-side',
-        'next' : 'lemon-side',
+let sodaContextTree = {
+    'apple-context' : {
+        'previous' : 'apple-context',
+        'next' : 'lemon-context',
     },
-    'lemon-side' : {
-        'previous' : 'apple-side',
-        'next' : 'grappe-side',
+    'lemon-context' : {
+        'previous' : 'apple-context',
+        'next' : 'grappe-context',
     },
-    'grappe-side' : {
-        'previous' : 'lemon-side',
-        'next' : 'cherry-side',
+    'grappe-context' : {
+        'previous' : 'lemon-context',
+        'next' : 'cherry-context',
     },
-    'cherry-side' : {
-        'previous' : 'grappe-side',
-        'next' : 'cherry-side',
+    'cherry-context' : {
+        'previous' : 'grappe-context',
+        'next' : 'cherry-context',
     }
 };
-let currentSodaSide = 'apple-side';
+let currentSodaContext = 'apple-context';
 
 // Functions
-function updateSodaLayersSide(side) {
-    sodaNameLayer.classList.remove('apple-side', 'lemon-side', 'grappe-side', 'cherry-side');
-    fruitPiecesLayer.classList.remove('apple-side', 'lemon-side', 'grappe-side', 'cherry-side');
-    sodaBottleLayer.classList.remove('apple-side', 'lemon-side', 'grappe-side', 'cherry-side');
-    sodaNameLayer.classList.add(side);
-    fruitPiecesLayer.classList.add(side);
-    sodaBottleLayer.classList.add(side);
-    currentSodaSide = side;
-}
-
-function scrollToNextSoda() {
-    sodaNameLayer.scrollBy({'top' : 0, 'left' : sodaNameLayer.scrollWidth/4, 'behavior' : 'smooth'})
-}
-
-function scrollToPreviousSoda() {
-    sodaNameLayer.scrollBy({'top' : 0, 'left' : -sodaNameLayer.scrollWidth/4, 'behavior' : 'smooth'})
+function updateSodaLayersSide(context) {
+    layersContainer.classList.remove('apple-context', 'lemon-context', 'grappe-context', 'cherry-context');
+    layersContainer.classList.add(context);
+    currentSodaContext = context;
 }
 
 // Listeners
 previousSodaButtonContainer.addEventListener('click', (e) => {
-    updateSodaLayersSide(sodaSideTree[currentSodaSide]['previous']);
+    updateSodaLayersSide(sodaContextTree[currentSodaContext]['previous']);
 
 });
 
 nextSodaButtonContainer.addEventListener('click', (e) => {
-    updateSodaLayersSide(sodaSideTree[currentSodaSide]['next']);
+    updateSodaLayersSide(sodaContextTree[currentSodaContext]['next']);
 });

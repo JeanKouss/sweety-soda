@@ -5,12 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <title>Sweety Soda</title>
 </head>
 <body>
+    <nav class="use-custom-nav ">
+        <div class="width-limit-wrapper flex-row flex-jc-space-between">
+            <!-- The use-custom-nav will have w 100%. The wrapper will limit it -->
+            <div class="nav-part logo">
+                Sweety
+            </div>
+            <div class="nav-part md-collapse collapser">
+                <!-- md-collapse used in js to collapse in  -->
+                <button class="md-if-collapse nav-toggler">
+                    Menu
+                </button>
+                <ul class="right-0 nav-toggle-target">
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Trending</a></li>
+                    <li><a href="">Gift Card</a></li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="">Store</a></li>
+                </ul>
+            </div>
+            <div class="nav-part left-separated">
+                <ul>
+                    <li>
+                        <a href="" data-content-alert="2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.5 14.25C8.5 16.17 10.08 17.75 12 17.75C13.92 17.75 15.5 16.17 15.5 14.25" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.80994 2L5.18994 5.63" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15.1899 2L18.8099 5.63" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 7.84961C2 5.99961 2.99 5.84961 4.22 5.84961H19.78C21.01 5.84961 22 5.99961 22 7.84961C22 9.99961 21.01 9.84961 19.78 9.84961H4.22C2.99 9.84961 2 9.99961 2 7.84961Z" stroke="black" stroke-width="1.5"/>
+                                <path d="M3.5 10L4.91 18.64C5.23 20.58 6 22 8.86 22H14.89C18 22 18.46 20.64 18.82 18.76L20.5 10" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.1601 10.87C12.0601 10.86 11.9401 10.86 11.8301 10.87C9.45006 10.79 7.56006 8.84 7.56006 6.44C7.56006 3.99 9.54006 2 12.0001 2C14.4501 2 16.4401 3.99 16.4401 6.44C16.4301 8.84 14.5401 10.79 12.1601 10.87Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M7.16021 14.56C4.74021 16.18 4.74021 18.82 7.16021 20.43C9.91021 22.27 14.4202 22.27 17.1702 20.43C19.5902 18.81 19.5902 16.17 17.1702 14.56C14.4302 12.73 9.92021 12.73 7.16021 14.56Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <section id="sodas-layers-container">
         <section id="soda-name-layer" class="layer">
             <div class="soda-bg apple">
@@ -60,7 +106,10 @@
                     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m382-480 294 294q15 15 14.5 35T675-116q-15 15-35 15t-35-15L297-423q-12-12-18-27t-6-30q0-15 6-30t18-27l308-308q15-15 35.5-14.5T676-844q15 15 15 35t-15 35L382-480Z"/></svg>
                 </button>
             </div>
-
+            <div id="buying-button-container">
+                <button>SHOP NOW</button>
+                <!-- TODO : change color -->
+            </div>
             <div id="next-soda-button-container" class="flex-centered switch-soda-button-container">
                 <button class="flex-centered">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M579-480 285-774q-15-15-14.5-35.5T286-845q15-15 35.5-15t35.5 15l307 308q12 12 18 27t6 30q0 15-6 30t-18 27L356-115q-15 15-35 14.5T286-116q-15-15-15-35.5t15-35.5l293-293Z"/></svg>
@@ -69,6 +118,7 @@
         </section>
     </section>
 
+    <script src="assets/js/nav.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
