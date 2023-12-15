@@ -5,12 +5,6 @@
         border: none;
     }
 
-    #bottles-container {
-        aspect-ratio: 0.59;
-        width: 60%;
-        height: auto;
-    }
-
     .bottle-aside {
         display: none;
     }
