@@ -1,0 +1,34 @@
+@media screen and (max-width : 900px) {
+    /* NAV */
+    .nav-part.left-separated {
+        padding-left: 0;
+        border: none;
+    }
+
+    #bottles-container {
+        aspect-ratio: 0.59;
+        width: 60%;
+        height: auto;
+    }
+
+    .bottle-aside {
+        display: none;
+    }
+
+    #previous-soda-button-container button {
+        transform: perspective(1000rem) rotateY(-30deg);
+    }
+    
+    #next-soda-button-container button {
+        transform: perspective(1000rem) rotateY(30deg);
+    }
+    
+    #previous-soda-button-container button svg {
+        transform: translateX(-1rem);
+    }
+    #next-soda-button-container button svg {
+        transform: translateX(1rem);
+    }
+
+
+}
