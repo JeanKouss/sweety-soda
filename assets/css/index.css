@@ -19,52 +19,78 @@
 }
 
 .switch-soda-button-container {
+    position: relative;
     height: 100%;
-    width: max(20%, 6rem);
+    width: max(30%, 6rem);
     cursor: pointer;
+    overflow: hidden;
 }
 
 .switch-soda-button-container button {
-    background-color: transparent;
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+.switch-soda-button-container button.pressed {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    background-color: white;
     border: none;
-    width: max(8vw, 5rem);
-    height: max(8vw, 5rem);
-    border-radius: 50%;
-    overflow: hidden;
-    transform: perspective(1000rem);
-    transition: all 0.2s;
-    box-shadow: 0 0 1rem 0 black;
+    animation: radar_loop 1s linear 0s forwards;
 }
 
-.switch-soda-button-container button svg{
-    width: 62.5%;
-    height: 62.5%;
-    fill: #FFF;
-    stroke: black;
-    stroke-width: 10px;
-    transition: all 0.2s;
+.switch-soda-button-container button.show_pressing_interaction {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    background-color: white;
+    border: none;
+    animation: radar_loop 2s linear 0s infinite forwards;
 }
+@keyframes radar_loop {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(50);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes radar_press {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    30% {
+        opacity: 0.1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(50);
+        opacity: 0;
+    }
+}
+/* .switch-soda-button-container button.pressed::after {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    content: "";
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    background-color: white;
+    border: none;
+} */
 
-#previous-soda-button-container:hover button {
-    transform: perspective(1000rem) rotateY(-30deg);
-}
-
-#next-soda-button-container:hover button {
-    transform: perspective(1000rem) rotateY(30deg);
-}
-
-#previous-soda-button-container:hover button svg {
-    transform: translateX(-1rem);
-}
-#next-soda-button-container:hover button svg {
-    transform: translateX(1rem);
-}
-#previous-soda-button-container:active button svg {
-    transform: translateX(-1.5rem);
-}
-#next-soda-button-container:active button svg {
-    transform: translateX(1.5rem);
-}
 
 #buying-button-container {
     display: flex;
@@ -147,8 +173,6 @@
 
 .bottle-aside {
     position: absolute;
-    /* top: 45%;
-    top: calc(50% - 50px); overhide if support */
     bottom: 20vh;
     left: 50%;
     aspect-ratio: 1,11;
