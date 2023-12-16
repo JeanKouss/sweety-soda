@@ -64,13 +64,15 @@ function placeNextSodaButtonAt(touchX, touchY) {
 
 // Listeners
 previousSodaButtonContainer.addEventListener('click', (e) => {
-    stopPressInteractionShowing()
+    e.preventDefault();
+    stopPressInteractionShowing();
     placePreviousSodaButtonAt(e.clientX, e.clientY);
     updateSodaLayersSide(sodaContextTree[currentSodaContext]['previous']);
 });
 
 nextSodaButtonContainer.addEventListener('click', (e) => {
-    stopPressInteractionShowing()
+    e.preventDefault();
+    stopPressInteractionShowing();
     placeNextSodaButtonAt(e.clientX, e.clientY);
     updateSodaLayersSide(sodaContextTree[currentSodaContext]['next']);
 });
