@@ -140,10 +140,10 @@
     transform: translate(-50%, -50%);
     transition: all 0.3s;
 }
-.nav-toggler:hover {
+.nav-toggler:active {
     transform: scale(0.9);
 }
-.nav-toggler:hover::after {
+.nav-toggler:active::after {
     transform: translate(-50%, -50%) scale(1.4);
 }
 
