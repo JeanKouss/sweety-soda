@@ -125,6 +125,7 @@
     background-color: transparent;
     border-radius: 3rem;
     transition: all 0.3s;
+    -webkit-tap-highlight-color: transparent;
 }
 .nav-toggler::after {
     content: "";
