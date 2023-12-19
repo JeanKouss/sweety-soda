@@ -1,8 +1,5 @@
 // Layers select
 let layersContainer = document.querySelector('#sodas-layers-container');
-let sodaNameLayer = document.querySelector('#soda-name-layer');
-let fruitPiecesLayer = document.querySelector('#fruit-pieces-layer');
-let sodaBottleLayer = document.querySelector('#soda-bottle-layer');
 
 // Buttons select
 let previousSodaButtonContainer = document.getElementById('previous-soda-button-container');
@@ -36,12 +33,46 @@ function updateSodaLayersSide(context) {
     currentSodaContext = context;
 }
 
+function stopPressInteractionShowing() {
+    previousSodaButtonContainer.querySelector('button').classList.remove('show_pressing_interaction');
+    nextSodaButtonContainer.querySelector('button').classList.remove('show_pressing_interaction');
+}
+
+function placePreviousSodaButtonAt(touchX, touchY) {
+    let button = previousSodaButtonContainer.querySelector('button');
+    button.classList.remove('pressed');
+    let buttonCoords = {
+        x : touchX - previousSodaButtonContainer.getBoundingClientRect().left,
+        y : touchY - previousSodaButtonContainer.getBoundingClientRect().top,
+    };
+    button.style.top = buttonCoords.y + 'px';
+    button.style.left = buttonCoords.x + 'px';
+    button.classList.add('pressed');
+}
+
+function placeNextSodaButtonAt(touchX, touchY) {
+    let button = nextSodaButtonContainer.querySelector('button');
+    button.classList.remove('pressed');
+    let buttonCoords = {
+        x : touchX - nextSodaButtonContainer.getBoundingClientRect().left,
+        y : touchY - nextSodaButtonContainer.getBoundingClientRect().top,
+    };
+    button.style.top = buttonCoords.y + 'px';
+    button.style.left = buttonCoords.x + 'px';
+    button.classList.add('pressed');
+}
+
 // Listeners
 previousSodaButtonContainer.addEventListener('click', (e) => {
+    e.preventDefault();
+    stopPressInteractionShowing();
+    placePreviousSodaButtonAt(e.clientX, e.clientY);
     updateSodaLayersSide(sodaContextTree[currentSodaContext]['previous']);
-
 });
 
 nextSodaButtonContainer.addEventListener('click', (e) => {
+    e.preventDefault();
+    stopPressInteractionShowing();
+    placeNextSodaButtonAt(e.clientX, e.clientY);
     updateSodaLayersSide(sodaContextTree[currentSodaContext]['next']);
 });
