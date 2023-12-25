@@ -63,14 +63,14 @@ function placeNextSodaButtonAt(touchX, touchY) {
 }
 
 // Listeners
-previousSodaButtonContainer.addEventListener('click', (e) => {
+previousSodaButtonContainer.addEventListener('mousedown', (e) => {
     e.preventDefault();
     stopPressInteractionShowing();
     placePreviousSodaButtonAt(e.clientX, e.clientY);
     updateSodaLayersSide(sodaContextTree[currentSodaContext]['previous']);
 });
 
-nextSodaButtonContainer.addEventListener('click', (e) => {
+nextSodaButtonContainer.addEventListener('mousedown', (e) => {
     e.preventDefault();
     stopPressInteractionShowing();
     placeNextSodaButtonAt(e.clientX, e.clientY);

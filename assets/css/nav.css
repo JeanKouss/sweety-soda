@@ -119,15 +119,15 @@
 /* Nav button */
 .nav-toggler {
     position: relative;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
     border: 3px solid white;
     background-color: transparent;
     border-radius: 3rem;
     transition: all 0.3s;
     -webkit-tap-highlight-color: transparent;
 }
-.nav-toggler::after {
+.nav-toggler::after, .nav-toggler::before {
     content: "";
     position: absolute;
     width: 1rem;
@@ -138,15 +138,21 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: all 0.3s;
+    transition: all 1s;
 }
 .nav-toggler:active {
     transform: scale(0.9);
 }
-.nav-toggler:active::after {
-    transform: translate(-50%, -50%) scale(1.4);
+.nav-part.active .nav-toggler::after {
+    width: 1.5rem;
+    height: 0.25rem;
+    transform: translate(-50%, -50%) scale(1.4) rotateZ(405deg);
 }
-
+.nav-part.active .nav-toggler::before {
+    width: 1.5rem;
+    height: 0.25rem;
+    transform: translate(-50%, -50%) scale(1.4) rotateZ(-405deg);
+}
 
 /* Media query */
 
@@ -161,18 +167,24 @@
         top:110%;
         left: 50%;
         width: 10rem;
-        display: none;
+        /* display: none; */
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        transform: translateX(-50%);
         background-color: white;
         border-radius: 1rem;
         border: 1px solid black;
+        transform: translateX(-50%) scale(0.1, 0.1);
+        transform-origin: 50% 1rem;
+        opacity: 0;
+        user-select: none;
+        transition: all 0.5s;
     }
-
-    .use-custom-nav .md-collapse>ul.active {
-        display: flex;
-        flex-direction: column;
+    
+    .use-custom-nav .active.md-collapse>ul {
+        transform: translateX(-50%) scale(1, 1);
+        opacity: 1;
     }
 
     .use-custom-nav .md-collapse>ul li {

@@ -5,7 +5,8 @@ let dropdownLi = document.querySelectorAll(".use-custom-nav .nav-part li.dropdow
 for (const elm of mdCollapse) {
     toogleButton = elm.querySelector("button.nav-toggler") ;
     toogleButton.addEventListener("click", () => {
-        elm.querySelector("ul.nav-toggle-target").classList.toggle("active");
+        // elm.querySelector("ul.nav-toggle-target").classList.toggle("active");
+        elm.classList.toggle("active");
     });
 
 }

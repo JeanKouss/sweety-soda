@@ -39,7 +39,7 @@
     border-radius: 3rem;
     background-color: white;
     border: none;
-    animation: radar_loop 1s linear 0s forwards;
+    animation: radar_press 1s linear 0s forwards;
 }
 
 .switch-soda-button-container button.show_pressing_interaction {
@@ -57,10 +57,10 @@
 @keyframes radar_loop {
     0% {
         transform: translate(-50%, -50%) scale(1);
-        opacity: 0.5;
+        opacity: 1;
     }
     50% {
-        transform: translate(-50%, -50%) scale(50);
+        transform: translate(-50%, -50%) scale(10);
         opacity: 0;
     }
     100% {
@@ -327,8 +327,8 @@ h2 {
 }
 .fruits-decoration.lemon img:nth-child(2) {
     position: absolute;
-    bottom: 8rem;
-    right: 5rem;
+    bottom: 15vh;
+    right: 2vw;
     width: min(25vh, 25vw);
     height: min(25vh, 25vw);
     min-width: 15rem;
@@ -378,15 +378,15 @@ h2 {
 .fruits-decoration.cherry img:nth-child(1) {
     position: absolute;
     top: 5%;
-    left: -5%;
+    left: -5vw;
     width: 40vh;
     height: 40vh;
     transform: rotateZ(-20deg);
 }
 .fruits-decoration.cherry img:nth-child(2) {
     position: absolute;
-    top: 4rem;
-    right: 5rem;
+    top: 4vh;
+    right: 5vw;
     width: 25vh;
     height: 25vh;
     transform: rotateZ(20deg);
