@@ -70,6 +70,11 @@
     text-decoration: none;
     color: black;
 }
+.use-custom-nav .nav-part ul>li>a.special {
+    background-color: #D02326;
+    color: white;
+    font-weight: bold;
+}
 
 .use-custom-nav .nav-part ul>li>a[data-content-alert] {
     position: relative;
@@ -196,6 +201,11 @@
         border-top-right-radius: 1rem;
     }
     .use-custom-nav .md-collapse>ul li:last-child {
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+    
+    .use-custom-nav .nav-part ul>li>a.special {
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
     }
