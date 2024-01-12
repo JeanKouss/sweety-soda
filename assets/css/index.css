@@ -12,12 +12,10 @@
 }
 
 /* DECORATION CIRCLES LAYER */
-#decoration-circles-layer {
-    /* position: absolute; */
-}
 .decoration-circle {
     border-color: gray;
     position: absolute;
+    transition: color 1s;
 }
 .decoration-circle:nth-child(1) {
     height: 80%;
@@ -44,7 +42,7 @@
     border: 2vh solid gray;
     border-radius: 50%;
     mix-blend-mode: multiply;
-    top: 25%;
+    top: 40%;
     left: 60%;
 }
 .decoration-circle:nth-child(4) {
@@ -65,6 +63,18 @@
     bottom: 0;
     right: 0;
     transform: translate(30%, 30%);
+}
+.apple-context .decoration-circle {
+    border-color: #91701766;
+}
+.lemon-context .decoration-circle {
+    border-color: #8EB42D66;
+}
+.grappe-context .decoration-circle {
+    border-color: #8064A066;
+}
+.cherry-context .decoration-circle {
+    border-color: #D8504466;
 }
 
 /* UI LAYER */
