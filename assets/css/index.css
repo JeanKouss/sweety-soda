@@ -11,6 +11,62 @@
     height: 100%;
 }
 
+/* DECORATION CIRCLES LAYER */
+#decoration-circles-layer {
+    /* position: absolute; */
+}
+.decoration-circle {
+    border-color: gray;
+    position: absolute;
+}
+.decoration-circle:nth-child(1) {
+    height: 80%;
+    aspect-ratio: 1;
+    border: 12vh solid gray;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    bottom: 2rem;
+    left: 0;
+    transform: translateX(-60%);
+}
+.decoration-circle:nth-child(2) {
+    height: 12vh;
+    aspect-ratio: 1;
+    border: 2.5vh solid gray;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    bottom: 2rem;
+    left: 20%;
+}
+.decoration-circle:nth-child(3) {
+    height: 15vh;
+    aspect-ratio: 1;
+    border: 2vh solid gray;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    top: 25%;
+    left: 60%;
+}
+.decoration-circle:nth-child(4) {
+    height: 15vh;
+    aspect-ratio: 1;
+    border: 3vh solid gray;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    top: 10%;
+    right: 5%;
+}
+.decoration-circle:nth-child(5) {
+    height: 55vh;
+    aspect-ratio: 1;
+    border: 10vh solid gray;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    bottom: 0;
+    right: 0;
+    transform: translate(30%, 30%);
+}
+
 /* UI LAYER */
 #ui-layer {
     display: flex;
@@ -80,18 +136,6 @@
         opacity: 0;
     }
 }
-/* .switch-soda-button-container button.pressed::after {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    content: "";
-    width: 3rem;
-    height: 3rem;
-    border-radius: 3rem;
-    background-color: white;
-    border: none;
-} */
-
 
 #buying-button-container {
     display: flex;
