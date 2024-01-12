@@ -123,40 +123,17 @@
 
 /* Nav button */
 .nav-toggler {
-    position: relative;
-    width: 3rem;
-    height: 3rem;
-    border: 3px solid white;
-    background-color: transparent;
-    border-radius: 3rem;
     transition: all 0.3s;
-    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-weight: bold;
 }
-.nav-toggler::after, .nav-toggler::before {
-    content: "";
-    position: absolute;
-    width: 1rem;
-    height: 1rem;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 3rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 1s;
+.nav-toggler:hover {
+    transform: scale(1.2);
 }
 .nav-toggler:active {
     transform: scale(0.9);
-}
-.nav-part.active .nav-toggler::after {
-    width: 1.5rem;
-    height: 0.25rem;
-    transform: translate(-50%, -50%) scale(1.4) rotateZ(405deg);
-}
-.nav-part.active .nav-toggler::before {
-    width: 1.5rem;
-    height: 0.25rem;
-    transform: translate(-50%, -50%) scale(1.4) rotateZ(-405deg);
 }
 
 /* Media query */
